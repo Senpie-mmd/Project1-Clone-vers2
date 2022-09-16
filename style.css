@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: yellow;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 0 0 5px rgba(0,0,0,0.8);
+}
+
+body {
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  overflow: hidden;
+}
+
+.container {
+  width: 90%;
+  height: 80vh;
+  display: flex;
+  position: relative;
+  border-radius: 10px;
+  z-index: 100;
+}
+
+.panel {
+  background-size: cover;
+  background-position: center;
+  flex: 0;
+  position: relative;
+  transition: flex 1.5s;
+}
+
+.panel.active {
+  flex: 10;
+}
+
+.panel p {
+  opacity: 0;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  transition: opacity 0.8s;
+}
+
+.panel.active p {
+  opacity: 1;
+}
+
+.btn { 
+  position: absolute;
+  background-color: rgba(255,255,255,0.6);
+  border: 5px solid black;
+  width: 30px;
+  height: 30px;
+  transform: rotate(45deg);
+  top: 50%;
+  z-index: 10;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.btn.next {
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  right: 30px;
+}
+
+.btn.prev {
+  border-right-color: transparent;
+  border-top-color: transparent;
+  left: 30px;
+}
+
+.btn:hover {
+  background-color: rgba(157, 59, 13, 0.6);
+}
+
+.btn:active {
+  width: 29px;
+  height: 29px;
+}
+
+.btn:disabled {
+  opacity: 0.2;
+}
